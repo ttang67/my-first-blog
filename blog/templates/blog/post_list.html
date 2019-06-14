@@ -1,22 +1,22 @@
 <html>
-<body>
-  <p>Hi there!</p>
-  <p>It works!</p>
-  </body>
-  </html>
-  <html>
   <head>
-    <title>Tania's blog</title>
-    </head>
-    <body>
-      <p>Hi there!</p>
-      <p>It works!</p>
-      </body>
-      </html>
+  <title>Tania's blog</title>
+  </head>
+  <body>
+    <p>Hi there!</p>
+    <p>It works!</p>
 
-<h1>A heading</h1>
-<h2>A sub-heading</h2>
-<h3>A sub-sub-heading</h3>
-<em>text</em>
-<strong>text</strong>
-<h2><a href=>"">My first post</a></h2>
+    {{ posts }}
+    <div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+  </body>
+</html>
